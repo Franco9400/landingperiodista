@@ -1,0 +1,49 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="El Mediador" class="bg-blue-800 text-white" />
+    <ScrollView>
+        <StackLayout class="p-4">
+            <!-- Header Section -->
+            <Image src="~/images/header.png" class="w-full h-40 rounded-lg" stretch="aspectFill" />
+            <Label text="El Mediador" class="text-3xl font-bold text-blue-800 text-center mt-4" />
+            <Label text="Tu fuente confiable de noticias digitales" class="text-lg text-gray-600 text-center" textWrap="true" />
+
+            <!-- Latest News Section -->
+            <Label text="Últimas Noticias" class="text-xl font-bold mt-6 mb-2" />
+            <GridLayout rows="auto, auto" columns="*, *" class="gap-2">
+                <StackLayout row="0" col="0" class="bg-white p-3 rounded-lg shadow">
+                    <Image src="~/images/news1.png" class="w-full h-32 rounded" stretch="aspectFill" />
+                    <Label text="Tecnología" class="text-blue-600 font-bold mt-2" />
+                    <Label text="Avances en IA" class="font-bold" textWrap="true" />
+                </StackLayout>
+                <StackLayout row="0" col="1" class="bg-white p-3 rounded-lg shadow">
+                    <Image src="~/images/news2.png" class="w-full h-32 rounded" stretch="aspectFill" />
+                    <Label text="Política" class="text-blue-600 font-bold mt-2" />
+                    <Label text="Actualidad Nacional" class="font-bold" textWrap="true" />
+                </StackLayout>
+            </GridLayout>
+
+            <!-- Social Media Links -->
+            <Label text="Síguenos en Redes Sociales" class="text-xl font-bold mt-6 mb-2" />
+            <GridLayout rows="auto" columns="*, *, *" class="gap-2">
+                <Button row="0" col="0" text="Facebook" tap="{{ onFacebookTap }}" class="bg-blue-600 text-white rounded-lg" />
+                <Button row="0" col="1" text="Twitter" tap="{{ onTwitterTap }}" class="bg-blue-400 text-white rounded-lg" />
+                <Button row="0" col="2" text="Instagram" tap="{{ onInstagramTap }}" class="bg-purple-600 text-white rounded-lg" />
+            </GridLayout>
+
+            <!-- Chatbot Section -->
+            <StackLayout class="bg-gray-100 p-4 rounded-lg mt-6">
+                <Label text="Asistente Virtual" class="text-xl font-bold mb-2" />
+                <TextView hint="Escribe tu pregunta aquí..." class="bg-white rounded p-2 h-20" text="{{ chatMessage }}" />
+                <Button text="Enviar Mensaje" tap="{{ onChatSend }}" class="bg-blue-800 text-white mt-2 rounded-lg" />
+                <Label text="{{ chatResponse }}" class="mt-2 text-gray-700" textWrap="true" />
+            </StackLayout>
+
+            <!-- Newsletter Subscription -->
+            <StackLayout class="bg-blue-800 p-4 rounded-lg mt-6">
+                <Label text="Suscríbete a nuestro boletín" class="text-white text-lg font-bold" />
+                <TextField hint="Tu correo electrónico" class="bg-white rounded p-2 mt-2" text="{{ email }}" />
+                <Button text="Suscribirse" tap="{{ onSubscribe }}" class="bg-white text-blue-800 mt-2 rounded-lg" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>
